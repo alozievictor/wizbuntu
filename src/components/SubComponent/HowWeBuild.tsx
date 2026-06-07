@@ -37,25 +37,25 @@ const HowWeBuild = () => {
             How We Build
           </p>
 
-          <h2 className="font-syne max-w-6xl text-[42px] font-bold leading-tight text-primary md:text-[106px] md:leading-[1.05]">
+          <h2 className="font-syne max-w-6xl text-[42px] font-bold leading-tight text-primary md:text-[76px] md:leading-[1.05] lg:text-[106px]">
             From Idea To
             <span className="block">Deployed Project.</span>
           </h2>
         </div>
 
-        <div className="grid border-border md:grid-cols-4 ">
+        <div className="grid border-border lg:grid-cols-4 ">
           {processSteps.map((step, index) => (
             <article
               key={step.number}
-              className={`flex flex-col max-w-73.25 justify-center border-b border-border py-8 md:min-h-116 md:border-b-0 md:px-4 md:py-0 ${
-                index > 0 ? "md:border-l" : ""
+              className={`flex flex-col max-w-73.25 justify-center border-b border-border py-8 lg:min-h-116 lg:border-b-0 lg:px-4 lg:py-0 ${
+                index > 0 ? "lg:border-l" : ""
               }`}
             >
-              <p className="font-dm mb-8 text-6xl font-bold text-secondary/35 md:mb-20 md:text-[100px]">
+              <p className="font-dm mb-8 text-6xl font-bold text-secondary/35 md:text-[80px] lg:mb-20 lg:text-[100px]">
                 {step.number}
               </p>
 
-              <h3 className="font-syne py-4 text-2xl font-bold text-primary md:text-[38px]">
+              <h3 className="font-syne py-4 text-2xl font-bold text-primary md:text-[32px] lg:text-[38px]">
                 {step.title}
               </h3>
 

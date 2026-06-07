@@ -17,17 +17,14 @@ const Navbar = () => {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 5) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
+      setScrolling(document.body.scrollTop > 5);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    document.body.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      document.body.removeEventListener("scroll", handleScroll);
     };
   }, [currentUrl]);
 
@@ -38,7 +35,7 @@ const Navbar = () => {
     handleClose();
 
     if (currentUrl === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      document.body.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
@@ -49,7 +46,7 @@ const Navbar = () => {
     const handleResize = () => {
       const newWindowWidth = window.innerWidth;
       setWindowWidth(newWindowWidth);
-      if (newWindowWidth <= 768) {
+      if (newWindowWidth < 1024) {
         setNav(false);
       }
     };
@@ -119,11 +116,11 @@ const Navbar = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         style={{ willChange: "transform, opacity" }}
         className={`w-full h-[11vh] top-0 left-0 fixed z-50 flex justify-center items-center ${
-          scrolling ? "shadow-sm bg-background " : " bg-transparent"
+          scrolling ? "shadow-sm bg-background" : " bg-transparent"
         }`}
       >
         <div className="w-[90%] lg:w-[87%] h-full mx-auto flex justify-between items-center">
-          {windowWidth > 768 && (
+          {windowWidth >= 1024 && (
             <nav className="menu">
               {links.map((link) => (
                 <a
@@ -151,7 +148,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
             <button
               //   onClick={() => navigate("/login")}
               className="text-primary font-dm font-semibold text-[13px] cursor-pointer "
@@ -168,7 +165,7 @@ const Navbar = () => {
           </div>
 
           <motion.div
-            className="md:hidden z-50 cursor-pointer p-2"
+            className="lg:hidden z-50 cursor-pointer p-2"
             onClick={handleClick}
             variants={iconVariants}
             animate={nav ? "open" : "closed"}
@@ -181,7 +178,7 @@ const Navbar = () => {
         <AnimatePresence>
           {nav && (
             <motion.div
-              className="absolute w-full h-screen bg-background top-[10vh] left-0 shadow-lg overflow-hidden z-40"
+              className="absolute w-full h-[89vh] bg-background top-[11vh] left-0 shadow-lg overflow-hidden z-40"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}

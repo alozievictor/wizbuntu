@@ -11,10 +11,10 @@ const Hero = () => {
           </p>
 
           <div>
-            <h1 className="font-syne mt-6 text-[43px] font-bold uppercase leading-1.07 md:leading-[1.04] tracking-tight text-primary sm:text-[58px] md:mt-8 md:text-[93px]">
+            <h1 className="font-syne mt-6 text-[43px] font-bold uppercase leading-1.07 tracking-tight text-primary sm:text-[58px] md:mt-8 md:text-[76px] md:leading-[1.04] lg:text-[93px]">
               We build <span className="text-tertiary">intelligent</span>{" "}
             </h1>
-            <h3 className="font-dm text-[52px] pt-3 md:pt-1 font-black uppercase leading-none tracking-wider text-transparent [-webkit-text-stroke:1px_#ffffff] sm:text-[72px] md:text-[93px] md:[-webkit-text-stroke:1.5px_#ffffff]">
+            <h3 className="font-dm text-[52px] pt-3 md:pt-1 font-black uppercase leading-none tracking-wider text-transparent [-webkit-text-stroke:1px_#ffffff] sm:text-[72px] md:text-[76px] md:[-webkit-text-stroke:1.5px_#ffffff] lg:text-[93px]">
               Software
             </h3>
           </div>

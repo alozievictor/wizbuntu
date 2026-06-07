@@ -42,8 +42,7 @@ const Loader = () => {
           transition={{ delay: 0.2, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="relative flex h-24 w-64 items-center justify-center md:w-72">
-            <div className="absolute inset-0 rounded-sm border border-border/70" />
-            <div className="absolute -inset-px bg-[linear-gradient(90deg,transparent,rgba(29,158,117,0.32),transparent)] opacity-60" />
+          
             <img
               src={Logo}
               alt="Wizbuntu"
@@ -52,7 +51,7 @@ const Loader = () => {
           </div>
 
           <motion.p
-            className="font-dm text-[11px] font-light uppercase tracking-[0.34em] text-secondary"
+            className="font-dm text-[11px] pb-2 font-light uppercase tracking-[0.34em] text-secondary"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.75, duration: 0.7, ease: "easeOut" }}
@@ -68,7 +67,7 @@ const Loader = () => {
           transition={{ delay: 0.45, duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.div
-            className="h-full w-1/3 bg-gradient-to-r from-transparent via-tertiary to-transparent"
+            className="h-full w-1/3 bg-linear-to-r from-transparent via-tertiary to-transparent"
             initial={{ x: "-120%" }}
             animate={{ x: "320%" }}
             transition={{
@@ -86,19 +85,9 @@ const Loader = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.95, duration: 0.7, ease: "easeOut" }}
         >
-          <div className="flex items-center gap-2">
-            {[0, 1, 2, 3, 4].map((dot) => (
-              <span
-                key={dot}
-                className="loader-dot"
-                style={{ animationDelay: `${dot * 0.18}s` }}
-              />
-            ))}
-          </div>
-
           <motion.p
             key={loaderLabels[labelIndex]}
-            className="font-dm text-[11px] font-light uppercase tracking-[0.28em] text-secondary"
+            className="font-dm text-[11px] pt-3 font-light uppercase tracking-[0.28em] text-secondary"
             initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, ease: "easeOut" }}

@@ -35,7 +35,7 @@ function App() {
         )}
       </AnimatePresence>
 
-      <div className="scrollbar-thumb-sky-700 scrollbar-track-sky-300">
+      <div>
         <Router>
           <Suspense fallback={<Loader />}>
             <Routes>

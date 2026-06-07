@@ -12,7 +12,7 @@ const featuredProjects = [
     category: "AI Research Documentations, MVP",
     description:
       "AI research platform that writes full project documentation chapter by chapter for final year students",
-    className: "md:absolute md:left-0 md:top-0 md:w-[78%]",
+    className: "lg:absolute lg:left-0 lg:top-0 lg:w-[78%]",
     image: bg1,
     mediaClass: "h-[20rem] md:h-[28rem] lg:h-[32rem]",
   },
@@ -21,7 +21,7 @@ const featuredProjects = [
     category: "Automation, Data Pipeline",
     description:
       "AI research platform that makes full project documentation easier.",
-    className: "md:absolute md:left-0 md:top-[33rem] md:w-[47%] lg:top-[45rem]",
+    className: "lg:absolute lg:left-0 lg:top-[45rem] lg:w-[47%]",
     image: bg2,
     mediaClass: "h-[25rem] md:h-[38rem] lg:h-[45rem]",
   },
@@ -30,7 +30,7 @@ const featuredProjects = [
     category: "Web, Design System, AI",
     description:
       "AI research platform that makes full project documentation easier.",
-    className: "md:absolute md:right-0 md:top-[49rem] md:w-[45%] lg:top-[55rem]",
+    className: "lg:absolute lg:right-0 lg:top-[55rem] lg:w-[45%]",
     image: bg3,
     mediaClass: "h-[25rem] md:h-[34rem] lg:h-[40rem]",
   },
@@ -39,7 +39,7 @@ const featuredProjects = [
     category: "Creative Visual AI",
     description:
       "AI research platform that makes full project documentation easier.",
-    className: "md:absolute md:left-0 md:top-[80rem] md:w-[47%] lg:top-[94rem]",
+    className: "lg:absolute lg:left-0 lg:top-[94rem] lg:w-[47%]",
     image: bg4,
     mediaClass: "h-[21rem] md:h-[25rem] lg:h-[30rem]",
   },
@@ -48,7 +48,7 @@ const featuredProjects = [
     category: "Design, Data Science, UI/UX",
     description:
       "AI research platform that makes full project documentation easier.",
-    className: "md:absolute md:right-0 md:top-[88rem] md:w-[45%] lg:top-[104rem]",
+    className: "lg:absolute lg:right-0 lg:top-[104rem] lg:w-[45%]",
     image: bg5,
     mediaClass: "h-[21rem] md:h-[25rem] lg:h-[30rem]",
   },
@@ -83,7 +83,7 @@ const FeaturedWork = () => {
           </p>
         </div>
 
-        <div className="grid gap-y-12 md:relative md:block md:h-[119rem] lg:h-[142rem]">
+        <div className="grid gap-y-12 lg:relative lg:block lg:h-[142rem]">
           {featuredProjects.map((project) => (
             <article key={project.title} className={project.className}>
               <div
