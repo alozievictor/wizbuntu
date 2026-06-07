@@ -12,6 +12,7 @@ const Home = lazy(() => import("./Pages/Home"));
 
 function App() {
   const [isLoading, setIsLoading] = React.useState(true);
+  const [showApp, setShowApp] = React.useState(false);
 
   React.useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <AnimatePresence>
+      <AnimatePresence onExitComplete={() => setShowApp(true)}>
         {isLoading && (
           <motion.div
             key="loader"
@@ -35,16 +36,18 @@ function App() {
         )}
       </AnimatePresence>
 
-      <div>
-        <Router>
-          <Suspense fallback={<Loader />}>
-            <Routes>
-              <Route path="/" element={<Navigate to="/home" />} />
-              <Route path="/home" element={<Home />} />
-            </Routes>
-          </Suspense>
-        </Router>
-      </div>
+      {showApp && (
+        <div>
+          <Router>
+            <Suspense fallback={<Loader />}>
+              <Routes>
+                <Route path="/" element={<Navigate to="/home" />} />
+                <Route path="/home" element={<Home />} />
+              </Routes>
+            </Suspense>
+          </Router>
+        </div>
+      )}
     </React.Fragment>
   );
 }
