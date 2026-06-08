@@ -60,13 +60,13 @@ const WhatWeDo = () => {
           {services.map((service) => (
             <article
               key={service.number}
-              className="group grid grid-cols-[2.5rem_1fr] gap-x-4 gap-y-4 border-b border-border py-6 md:grid-cols-[2rem_1fr_1.2fr] md:items-center md:gap-14 md:py-7"
+              className="group grid grid-cols-[2.5rem_1fr] gap-x-4 gap-y-4 group border-b border-border py-6 md:grid-cols-[2rem_1fr_1.2fr] md:items-center md:gap-14 md:py-7"
             >
               <p className="font-dm pt-1 text-sm font-semibold text-secondary md:pt-0 md:text-xl">
                 {service.number}
               </p>
 
-              <h3 className="font-syne text-2xl font-bold leading-tight text-primary md:w-82.5 md:text-[40px]">
+              <h3 className="font-syne text-2xl font-bold leading-tight text-primary group-hover:text-tertiary transition duration-300 md:w-82.5 md:text-[40px]">
                 {service.title}
               </h3>
 

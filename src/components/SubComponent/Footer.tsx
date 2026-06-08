@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+// import { ArrowRight } from "lucide-react";
 import Logo from "../../assets/Logo.png";
 import Button from "../Ui/Button";
 
@@ -32,7 +32,7 @@ const Footer = () => {
             <Button
               variant="footer-outline"
               className="h-15 w-full max-w-xs px-8 md:w-96"
-              icon={<ArrowRight size={18} />}
+              // icon={<ArrowRight size={18} />}
             >
               <span className="font-syne font-bold text-primary text-sm uppercase">
                 Start a<span className="block">Conversation</span>

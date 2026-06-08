@@ -62,7 +62,7 @@ const Navbar = () => {
   const links = [
     { to: "work", label: "Our Work", offset: -50 },
     { to: "service", label: "Services", offset: -50 },
-    { to: "wizbuntu", label: "Why Wizbuntu", offset: -50 },
+    { to: "wizbuntu", label: "Why Wizbuntu?", offset: -50 },
     { to: "blog", label: "Blog", offset: -50 },
   ];
 
@@ -151,7 +151,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-6">
             <button
               //   onClick={() => navigate("/login")}
-              className="text-primary font-dm font-semibold text-[13px] cursor-pointer "
+              className="text-primary font-dm font-semibold uppercase text-[13px] cursor-pointer "
             >
               HELLO@wizbuntu.COM
             </button>
