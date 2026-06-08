@@ -1,3 +1,6 @@
+import React from "react";
+import { animate, useInView, useMotionValue } from "framer-motion";
+
 const processSteps = [
   {
     number: "01",
@@ -25,6 +28,40 @@ const processSteps = [
   },
 ];
 
+interface CountUpNumberProps {
+  value: string;
+}
+
+const CountUpNumber = ({ value }: CountUpNumberProps) => {
+  const ref = React.useRef<HTMLParagraphElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.65 });
+  const motionValue = useMotionValue(0);
+  const [displayValue, setDisplayValue] = React.useState("00");
+
+  React.useEffect(() => {
+    if (!isInView) return;
+
+    const controls = animate(motionValue, Number(value), {
+      duration: 1.35,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (latest) => {
+        setDisplayValue(String(Math.round(latest)).padStart(2, "0"));
+      },
+    });
+
+    return () => controls.stop();
+  }, [isInView, motionValue, value]);
+
+  return (
+    <p
+      ref={ref}
+      className="font-dm mb-8 text-6xl font-bold text-secondary/35 md:text-[80px] lg:mb-20 lg:text-[100px]"
+    >
+      {displayValue}
+    </p>
+  );
+};
+
 const HowWeBuild = () => {
   return (
     <section
@@ -51,9 +88,7 @@ const HowWeBuild = () => {
                 index > 0 ? "lg:border-l" : ""
               }`}
             >
-              <p className="font-dm mb-8 text-6xl font-bold text-secondary/35 md:text-[80px] lg:mb-20 lg:text-[100px]">
-                {step.number}
-              </p>
+              <CountUpNumber value={step.number} />
 
               <h3 className="font-syne py-4 text-2xl font-bold text-primary md:text-[32px] lg:text-[38px]">
                 {step.title}

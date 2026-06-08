@@ -1,3 +1,5 @@
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Button from "../Ui/Button";
 import bg1 from "../../assets/bg1.png";
@@ -39,7 +41,7 @@ const featuredProjects = [
     category: "Creative Visual AI",
     description:
       "AI research platform that makes full project documentation easier.",
-    className: "lg:absolute lg:left-0 lg:top-[94rem] lg:w-[47%]",
+    className: "lg:absolute lg:left-0 lg:top-[103rem] lg:w-[47%]",
     image: bg4,
     mediaClass: "h-[21rem] md:h-[25rem] lg:h-[30rem]",
   },
@@ -48,19 +50,22 @@ const featuredProjects = [
     category: "Design, Data Science, UI/UX",
     description:
       "AI research platform that makes full project documentation easier.",
-    className: "lg:absolute lg:right-0 lg:top-[104rem] lg:w-[45%]",
+    className: "lg:absolute lg:right-0 lg:top-[109rem] lg:w-[45%]",
     image: bg5,
-    mediaClass: "h-[21rem] md:h-[25rem] lg:h-[30rem]",
+    mediaClass: "h-[21rem] md:h-[25rem] lg:h-[33rem]",
   },
 ];
 
 const FeaturedWork = () => {
+  const [cursorPosition, setCursorPosition] = React.useState({ x: 0, y: 0 });
+  const [activeProject, setActiveProject] = React.useState<string | null>(null);
+
   return (
     <section
       id="work"
       className="w-full flex justify-center items-center bg-background py-20 md:py-28"
     >
-      <div className="mx-auto w-[90%] lg:w-[85%] grid gap-6 ">
+      <div className="mx-auto w-[90%] lg:w-[85%] grid gap-5 ">
         <div className="py-6 flex items-center gap-2">
           <svg
             width="24"
@@ -83,18 +88,46 @@ const FeaturedWork = () => {
           </p>
         </div>
 
-        <div className="grid gap-y-12 lg:relative lg:block lg:h-[142rem]">
+        <div className="grid gap-y-12 lg:relative lg:block lg:h-596">
           {featuredProjects.map((project) => (
             <article key={project.title} className={project.className}>
               <div
-                className={`${project.mediaClass} w-full overflow-hidden bg-border`}
+                className={`${project.mediaClass} group relative w-full overflow-hidden bg-border md:cursor-none`}
+                onMouseEnter={() => setActiveProject(project.title)}
+                onMouseLeave={() => setActiveProject(null)}
+                onMouseMove={(event) => {
+                  const rect = event.currentTarget.getBoundingClientRect();
+                  setCursorPosition({
+                    x: event.clientX - rect.left,
+                    y: event.clientY - rect.top,
+                  });
+                }}
               >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                   loading="lazy"
                 />
+
+                <AnimatePresence>
+                  {activeProject === project.title && (
+                    <motion.div
+                      className="pointer-events-none h-25 w-25 absolute left-0 top-0 z-10 hidden text-center -translate-x-1/2 -translate-y-1/2 gap-0 rounded-full bg-background border border-background py-2 font-syne text-base font-semibold capitalize text-primary md:flex flex-col items-center justify-center"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{
+                        opacity: 1,
+                        scale: 1,
+                        x: cursorPosition.x,
+                        y: cursorPosition.y,
+                      }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.12, ease: "easeOut" }}
+                    >
+                      Show<br/>more <ArrowRight size={14} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               <div className="pt-3 grid gap-2 w-full">
