@@ -1,5 +1,4 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Button from "../Ui/Button";
 import bg1 from "../../assets/bg1.png";
@@ -57,9 +56,6 @@ const featuredProjects = [
 ];
 
 const FeaturedWork = () => {
-  const [cursorPosition, setCursorPosition] = React.useState({ x: 0, y: 0 });
-  const [activeProject, setActiveProject] = React.useState<string | null>(null);
-
   return (
     <section
       id="work"

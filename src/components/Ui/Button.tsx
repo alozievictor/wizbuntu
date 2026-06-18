@@ -2,11 +2,25 @@ import React from "react";
 
 type ButtonVariant = "primary" | "outline" | "footer-outline";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, React.AnchorHTMLAttributes<HTMLAnchorElement> {
+type CommonProps = {
   variant?: ButtonVariant;
   icon?: React.ReactNode;
   iconPosition?: "left" | "right";
-}
+  className?: string;
+  children?: React.ReactNode;
+};
+
+type AnchorProps = CommonProps &
+  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "type"> & {
+    href: string;
+  };
+
+type NativeButtonProps = CommonProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    href?: undefined;
+  };
+
+type ButtonProps = AnchorProps | NativeButtonProps;
 
 const Button = ({
   variant = "primary",
@@ -14,6 +28,7 @@ const Button = ({
   iconPosition = "right",
   className = "",
   children,
+  href,
   ...props
 }: ButtonProps) => {
   const baseClasses =
@@ -29,14 +44,27 @@ const Button = ({
 
   const iconElement = icon ? <span className="shrink-0">{icon}</span> : null;
 
-  const { type, ...restProps } = props;
+  if (href) {
+    const { href: anchorHref, ...anchorProps } = props as AnchorProps;
+    return (
+      <a
+        className={`${baseClasses} ${variantClasses} ${className}`}
+        href={anchorHref}
+        {...(anchorProps as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
+        {iconPosition === "left" && iconElement}
+        <span>{children}</span>
+        {iconPosition === "right" && iconElement}
+      </a>
+    );
+  }
 
-
+  const { type, ...buttonProps } = props as React.ButtonHTMLAttributes<HTMLButtonElement>;
   return (
     <button
       type={type ?? "button"}
       className={`${baseClasses} ${variantClasses} ${className}`}
-      {...(restProps as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+      {...buttonProps}
     >
       {iconPosition === "left" && iconElement}
       <span>{children}</span>
