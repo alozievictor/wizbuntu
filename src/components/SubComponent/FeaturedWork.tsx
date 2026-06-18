@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowRight } from "lucide-react";
 import Button from "../Ui/Button";
 import bg1 from "../../assets/bg1.png";
