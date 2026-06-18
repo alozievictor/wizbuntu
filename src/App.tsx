@@ -42,7 +42,7 @@ function App() {
             <Suspense fallback={<Loader />}>
               <Routes>
                 <Route path="/" element={<Navigate to="/home" />} />
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Home />} />
               </Routes>
             </Suspense>
           </Router>
