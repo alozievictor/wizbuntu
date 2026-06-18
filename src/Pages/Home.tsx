@@ -1,11 +1,11 @@
-import FeaturedWork from '../components/SubComponent/FeaturedWork';
+// import FeaturedWork from '../components/SubComponent/FeaturedWork';
 import Footer from '../components/SubComponent/Footer';
 import HowWeBuild from '../components/SubComponent/HowWeBuild';
 import Hero from '../components/SubComponent/Hero';
 import MarqueeStrip from '../components/SubComponent/MarqueeStrip';
 import Navbar from '../components/SubComponent/Navbar';
-import WhatWeDo from '../components/SubComponent/WhatWeDo';
 import ScrollReveal from '../components/Ui/ScrollReveal';
+import WhatWeDo from '../components/SubComponent/WhatWeDo';
 
 
 const Home = () => {
@@ -18,9 +18,9 @@ const Home = () => {
       <ScrollReveal>
         <MarqueeStrip />
       </ScrollReveal>
-      <ScrollReveal>
+      {/* <ScrollReveal>
         <FeaturedWork />
-      </ScrollReveal>
+      </ScrollReveal> */}
       <ScrollReveal>
         <WhatWeDo />
       </ScrollReveal>

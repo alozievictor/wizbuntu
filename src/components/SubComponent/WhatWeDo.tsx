@@ -3,34 +3,37 @@ import { ArrowRight } from "lucide-react";
 const services = [
   {
     number: "01",
-    title: "AI Platform Development",
+    title: "Sabi Research",
     description:
-      "LLM-powered applications, intelligent workflows, and document generation systems.",
+      "Research, write, and deliver better academic projects with AI-powered guidance from start to finish.",
+    feature: ["AI Research", "SAAS"],
   },
   {
     number: "02",
-    title: "Research And Data Systems",
+    title: "DataSync",
     description:
-      "Automated research pipelines and structured output systems at scale.",
+      "Build reliable distributed systems with intelligent workflow orchestration and fault-tolerant execution.",
+    feature: ["INFRASTRUCTURE", "AI"],
   },
   {
     number: "03",
-    title: "SaaS Product Engineering",
+    title: "AutoInspect",
     description:
-      "Zero to launch - strategy, full-stack engineering, AI feature integration.",
+      "Automate inspections, improve accuracy, and generate actionable reports with AI-powered analysis.",
+    feature: ["AUTOMATION", "ANALYSIS"],
   },
-  {
-    number: "04",
-    title: "Workflow Automation",
-    description:
-      "AI agents that eliminate repetitive processes: content, documents, data.",
-  },
-  {
-    number: "05",
-    title: "API & Backend Architecture",
-    description:
-      "Scalable infrastructure designed to power production AI applications.",
-  },
+  // {
+  //   number: "04",
+  //   title: "Workflow Automation",
+  //   description:
+  //     "AI agents that eliminate repetitive processes: content, documents, data.",
+  // },
+  // {
+  //   number: "05",
+  //   title: "API & Backend Architecture",
+  //   description:
+  //     "Scalable infrastructure designed to power production AI applications.",
+  // },
 ];
 
 const WhatWeDo = () => {
@@ -39,21 +42,32 @@ const WhatWeDo = () => {
       id="service"
       className="flex w-full items-center justify-center bg-background py-1 md:py-5"
     >
-      <div className="mx-auto w-[90%] lg:w-[85%]">
-        <div className="mb-10 grid gap-7 border-b border-border pb-10 md:mb-16 md:grid-cols-2 md:items-end md:gap-8 md:pb-16">
-          <h2 className="font-syne text-[42px] font-bold uppercase leading-tight text-primary md:text-[67px]">
-            What
-            <span className="block">
-              We <span className="text-tertiary">Do</span>
-            </span>
-          </h2>
+      <div className="mx-auto w-[90%] lg:w-[85%] pt-0 md:pt-24">
+        <div className="mb-10 border-b border-border pb-10 md:mb-16 md:gap-8 md:pb-16">
+          <div className="py-6 text-tertiary flex items-center gap-2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13 19H19V13M19 19L5 5"
+                stroke="#1d9e75"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
 
-          <div className="flex w-full items-end justify-end">
-            <p className="font-dm text-base font-normal leading-6 text-secondary md:ml-auto md:w-[75%] md:text-start md:text-xl md:leading-7">
-              From first line of code to live product - we build complete{" "}
-              <span className="text-primary">AI systems end to end.</span>
+            <p className="font-dm text-base font-medium uppercase">
+              Featured Work
             </p>
           </div>
+          <h2 className="font-syne text-[42px] font-bold uppercase leading-tight text-primary md:text-[67px]">
+            What we’ve <br className="hidden md:block" /> built
+          </h2>
         </div>
 
         <div>
@@ -66,14 +80,27 @@ const WhatWeDo = () => {
                 {service.number}
               </p>
 
-              <h3 className="font-syne text-2xl font-bold leading-tight text-primary group-hover:text-tertiary transition duration-300 md:w-82.5 md:text-[40px]">
-                {service.title}
-              </h3>
-
-              <div className="col-span-2 flex w-full items-start justify-between gap-4 md:col-span-1 md:items-center md:justify-end md:pr-5">
-                <p className="font-syne max-w-[82%] text-base font-normal leading-6 text-secondary md:ml-auto md:max-w-104 md:text-right md:text-xl md:leading-tight">
+              <div>
+                <h3 className="font-syne text-2xl font-bold leading-tight text-primary group-hover:text-tertiary transition duration-300 md:w-82.5 md:text-[40px]">
+                  {service.title}
+                </h3>
+                <p className="font-syne text-base font-normal leading-6 text-secondary md:ml-auto md:text-xl md:leading-tight">
                   {service.description}
                 </p>
+              </div>
+
+              <div className="col-span-2 flex w-full items-start justify-between gap-4 md:col-span-1 md:items-center md:justify-end md:pr-5">
+
+                <div className="flex items-center text-[#363634] transition duration-300 gap-3 px-5 py-3 border border-border rounded-full">
+                  {service.feature?.map((item, index) => (
+                    <span key={`${item}-${index}`} className="flex items-center gap-2 font-normal font-syne text-sm uppercase md:text-base">
+                      <span>{item}</span>
+                      {index < service.feature.length - 1 && (
+                        <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#363634]" />
+                      )}
+                    </span>
+                  ))}
+                </div>
 
                 <ArrowRight
                   size={22}

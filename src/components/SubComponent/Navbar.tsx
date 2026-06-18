@@ -149,12 +149,12 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center gap-6">
-            <button
-              //   onClick={() => navigate("/login")}
+            <a
+              href="mailto:hello@wizbuntu.com"
               className="text-primary font-dm font-semibold uppercase text-[13px] cursor-pointer "
             >
               HELLO@wizbuntu.COM
-            </button>
+            </a>
 
             <Button
               //   onClick={() => navigate("/signup")}
@@ -203,12 +203,12 @@ const Navbar = () => {
                 ))}
 
                 <motion.li variants={itemVariants} className="mt-4">
-                  <button
-                    //   onClick={() => navigate("/login")}
+                  <a
+                    href="mailto:hello@wizbuntu.com"
                     className="text-primary font-dm py-2.5 font-semibold text-center flex justify-self-center text-[13px] cursor-pointer "
                   >
                     HELLO@wizbuntu.COM
-                  </button>
+                  </a>
                 </motion.li>
                 <motion.li variants={itemVariants}>
                   <Button

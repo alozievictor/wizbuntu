@@ -2,7 +2,7 @@ import React from "react";
 
 type ButtonVariant = "primary" | "outline" | "footer-outline";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   variant?: ButtonVariant;
   icon?: React.ReactNode;
   iconPosition?: "left" | "right";
@@ -29,10 +29,14 @@ const Button = ({
 
   const iconElement = icon ? <span className="shrink-0">{icon}</span> : null;
 
+  const { type, ...restProps } = props;
+
+
   return (
     <button
+      type={type ?? "button"}
       className={`${baseClasses} ${variantClasses} ${className}`}
-      {...props}
+      {...(restProps as React.ButtonHTMLAttributes<HTMLButtonElement>)}
     >
       {iconPosition === "left" && iconElement}
       <span>{children}</span>

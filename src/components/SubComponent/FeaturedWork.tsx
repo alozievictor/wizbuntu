@@ -91,7 +91,7 @@ const FeaturedWork = () => {
         <div className="grid gap-y-12 lg:relative lg:block lg:h-596">
           {featuredProjects.map((project) => (
             <article key={project.title} className={project.className}>
-              <div
+              {/* <div
                 className={`${project.mediaClass} group relative w-full overflow-hidden bg-border md:cursor-none`}
                 onMouseEnter={() => setActiveProject(project.title)}
                 onMouseLeave={() => setActiveProject(null)}
@@ -128,7 +128,7 @@ const FeaturedWork = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </div> */}
 
               <div className="pt-3 grid gap-2 w-full">
                 <div className="w-full flex justify-between gap-4">

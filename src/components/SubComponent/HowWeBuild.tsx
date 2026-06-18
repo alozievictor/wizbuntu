@@ -4,27 +4,27 @@ import { animate, useInView, useMotionValue } from "framer-motion";
 const processSteps = [
   {
     number: "01",
-    title: "Discovery",
+    title: "Research & Discovery",
     description:
-      "We map the problem space - what AI actually solves, not just automates.",
+      "We investigate the problem, understand the users, and identify where intelligence can create the greatest impact.",
   },
   {
     number: "02",
-    title: "Architecture",
+    title: "Design & Architecture",
     description:
-      "AI stack, data flows, integration - designed to scale from day one.",
+      "We design scalable systems, data flows, and AI capabilities with long-term reliability and growth in mind.",
   },
   {
     number: "03",
     title: "Build & Iterate",
     description:
-      "Rapid development with continuous feedback. No scope fog, no promises.",
+      "We rapidly develop, test, and refine solutions through continuous experimentation and real-world feedback.",
   },
   {
     number: "04",
     title: "Ship & Scale",
     description:
-      "We deploy, monitor, and grow with your infrastructure built for real usage.",
+      "We deploy, monitor, and continuously improve products and platforms as they adapt to changing needs and opportunities.",
   },
 ];
 
@@ -66,7 +66,7 @@ const HowWeBuild = () => {
   return (
     <section
       id="wizbuntu"
-      className="flex w-full items-center justify-center bg-background py-20 md:py-28"
+      className="flex w-full items-center justify-center bg-background py-20 md:py-36"
     >
       <div className="mx-auto w-[90%] lg:w-[85%] grid gap-10 md:gap-20">
         <div className="mb-14 md:mb-0">
@@ -74,10 +74,18 @@ const HowWeBuild = () => {
             How We Build
           </p>
 
-          <h2 className="font-syne max-w-6xl text-[42px] font-bold leading-tight text-primary md:text-[76px] md:leading-[1.05] lg:text-[106px]">
-            From Idea To
-            <span className="block">Deployed Project.</span>
-          </h2>
+          <div className="pt-5 md:flex justify-between md:items-end w-full">
+            <h2 className="font-syne max-w-6xl text-[42px] font-bold leading-tight text-primary md:text-[76px] md:leading-[1.05] lg:text-[106px]">
+              From <br className="hidden md:block" /> Research
+              <br className="hidden md:block" /> To{" "}
+              <span className="text-tertiary">Reality.</span>
+            </h2>
+
+            <p className="font-dm text-lg leading-6 text-secondary font-normal md:text-xl md:leading-7 max-w-lg flex justify-self-end">
+              Every product we build starts with deep research and ends with a
+              live, scalable system — nothing in between is skipped.
+            </p>
+          </div>
         </div>
 
         <div className="grid border-border lg:grid-cols-4 ">
@@ -94,7 +102,7 @@ const HowWeBuild = () => {
                 {step.title}
               </h3>
 
-              <p className="font-dm text-lg leading-6 text-secondary font-normal md:text-base md:leading-7">
+              <p className="font-dm text-lg text-secondary font-normal md:text-xl md:leading-tight">
                 {step.description}
               </p>
             </article>
