@@ -28,11 +28,11 @@ const MarqueeStrip = () => {
       </section>
 
       <section className="w-full h-auto flex justify-center items-center overflow-hidden">
-        <div className="w-[90%] md:w-[85%] mx-auto grid md:grid-cols-3 md:gap-7 py-18 border-b border-border">
+        <div className="w-[90%] md:w-[85%] mx-auto grid md:grid-cols-3 gap-4 md:gap-7 py-18 border-b border-border">
           <p className="font-dm text-base font-medium uppercase text-tertiary md:col-span-1 md:text-lg">
             OUR BELIEF
           </p>
-          <p className="font-syne md:col-span-2 w-full text-4xl text-secondary font-semibold leading-16 md:text-[50px] ">
+          <p className="font-syne md:col-span-2 w-full text-[26px] text-secondary font-semibold leading-relaxed md:leading-16 md:text-[50px] ">
             we believe intelligent systems should help people think better, move
             faster, and solve problems that once seemed difficult.{" "}
             <span className="text-primary">

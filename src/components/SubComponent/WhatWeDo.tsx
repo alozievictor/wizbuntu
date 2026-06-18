@@ -74,9 +74,9 @@ const WhatWeDo = () => {
           {services.map((service) => (
             <article
               key={service.number}
-              className="group grid grid-cols-[2.5rem_1fr] gap-x-4 gap-y-4 group border-b border-border py-6 md:grid-cols-[2rem_1fr_1.2fr] md:items-center md:gap-14 md:py-7"
+              className="group grid grid-cols-[2rem_1fr] gap-x-4 gap-y-4 group border-b border-border py-6 md:grid-cols-[2rem_1fr_1.2fr] md:items-center md:gap-14 md:py-7"
             >
-              <p className="font-dm pt-1 text-sm font-semibold text-secondary md:pt-0 md:text-xl">
+              <p className="font-dm pt-1 text-base font-semibold text-secondary md:pt-0 md:text-xl">
                 {service.number}
               </p>
 
@@ -89,7 +89,7 @@ const WhatWeDo = () => {
                 </p>
               </div>
 
-              <div className="col-span-2 flex w-full items-start justify-between gap-4 md:col-span-1 md:items-center md:justify-end md:pr-5">
+              <div className="col-span-2 flex w-full justify-between gap-4 md:col-span-1 items-center md:justify-end md:pr-5">
 
                 <div className="flex items-center text-[#363634] transition duration-300 gap-3 px-5 py-3 border border-border rounded-full">
                   {service.feature?.map((item, index) => (

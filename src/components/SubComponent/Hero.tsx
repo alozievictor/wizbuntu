@@ -19,27 +19,21 @@ const Hero = () => {
       <div className="pointer-events-none absolute inset-0 bg-hero/40 md:bg-hero/55" />
 
       <div className="flex w-full items-center justify-center relative">
-        <div className="relative z-10 mx-auto grid w-[90%] border-border pb-2 md:grid-cols-[0.95fr_1.05fr] md:border-b md:pb-0 lg:w-[85%] pt-0 md:pt-16">
-          <div className="relative z-20 grid w-full gap-4 pb-20 md:gap-7">
+        <div className="relative z-10 mx-auto grid w-[90%] border-border md:grid-cols-[0.95fr_1.05fr] md:border-b md:pb-0 lg:w-[85%] pt-0 md:pt-16">
+          <div className="relative z-20 grid w-full gap-4 pb-1 md:pb-20 md:gap-7">
             <p className="font-dm mb-3 text-sm font-normal uppercase leading-5 text-secondary md:mb-9 md:text-base">
               AI Systems & Platform Development
             </p>
 
             <div>
-              <h1 className="font-syne mt-6 text-[43px] font-bold uppercase leading-tight tracking-tight text-primary sm:text-[58px] md:mt-8 md:text-[72px] md:leading-[1.04] lg:text-[75px]">
+              <h1 className="font-syne mt-6 text-[41px] font-bold uppercase leading-tight tracking-tight text-primary sm:text-[58px] md:mt-8 md:text-[70px] md:leading-[1.04] lg:text-[80px]">
                 Building
                 <span className="text-tertiary"> INTELLIGENT </span> SYSTEMS
               </h1>
-              <h3 className="font-dm text-[52px] pt-3 md:pt-1 font-black uppercase leading-tight tracking-wider text-transparent [-webkit-text-stroke:1px_#CCC8C1] sm:text-[58px] md:text-[72px] md:[-webkit-text-stroke:1.5px_#CCC8C1] lg:text-[75px]">
+              <h3 className="font-dm text-[43px] pt-2 md:pt-1 font-black uppercase leading-tight tracking-wider text-transparent [-webkit-text-stroke:1px_#CCC8C1] sm:text-[58px] md:text-[72px] md:[-webkit-text-stroke:1.5px_#CCC8C1] lg:text-[80px]">
                 From design to reality
               </h3>
             </div>
-            {/* <p className="font-dm pt-6 max-w-xl text-base font-normal leading-8 text-secondary md:pt-0 md:pr-20 md:text-xl md:leading-7">
-              Wizbuntu Software Hub engineers{" "}
-              <span className="text-primary">AI-native platforms</span> and
-              systems that solve real problems - from research automation to
-              production-grade SaaS.
-            </p> */}
           </div>
 
           <div className="relative hidden min-h-[10rem] w-full overflow-visible md:block">
@@ -64,16 +58,16 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-center items-center py-5 md:py-16 z-10 relative">
+      <div className="w-full flex justify-center items-center py-5 md:py-16 z-10 relative ">
         <div className="w-[90%] mx-auto md:w-[85%] grid md:grid-cols-[0.95fr_1.05fr] md:pb-0 lg:w-[85%]">
-          <p className="font-dm pt-6 max-w-2xl text-base font-normal leading-8 text-secondary md:pt-0 md:pr-20 md:text-xl md:leading-7">
+          <p className="font-dm pt-3 max-w-2xl text-base font-normal leading-6 text-secondary md:pt-0 md:pr-20 md:text-xl md:leading-7">
             Wizbuntu Software Hub engineers{" "}
             <span className="text-primary">AI-native platforms</span> and
             systems that solve real problems - from research automation to
             production-grade SaaS.
           </p>
 
-          <div className="mt-10 flex items-center gap-4 self-center md:absolute md:bottom-20 md:right-[15%] md:mt-0 md:gap-5 md:self-auto">
+          <div className="pt-10 flex justify-center md:justify-normal items-center gap-4 self-center md:absolute md:bottom-20 right-[30%] md:right-[15%] md:pt-0 md:gap-5 md:self-auto">
             <a
               href="#work"
               aria-label="Scroll to featured work"

@@ -14,7 +14,7 @@ const Footer = () => {
 
       <div className="relative z-10 mx-auto w-[90%] lg:w-[85%]">
         <div className="grid gap-12 border-b border-border pb-16 md:grid-cols-[1.1fr_1fr] md:items-center md:pb-20">
-          <h2 className="font-syne text-[42px] font-extrabold uppercase leading-tight text-primary md:text-[67px]">
+          <h2 className="font-syne text-[48px] font-bold md:font-extrabold uppercase leading-tight text-primary md:text-[67px]">
             Tell us what
             <br className="hidden md:block" />
             <span className="block text-tertiary">you’re</span>
