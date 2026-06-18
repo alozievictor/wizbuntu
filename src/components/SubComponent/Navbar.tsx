@@ -157,7 +157,6 @@ const Navbar = () => {
             </a>
 
             <Button
-              //   onClick={() => navigate("/signup")}
               className="h-11.25 font-syne w-32.5 text-xs uppercase"
             >
               Let's talk
