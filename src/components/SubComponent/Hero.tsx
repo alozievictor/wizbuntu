@@ -1,7 +1,5 @@
-import { lazy, Suspense } from "react";
 import type { Application } from "@splinetool/runtime";
-
-const Spline = lazy(() => import("@splinetool/react-spline"));
+import SplineLazy from "../Ui/SplineLazy";
 
 const SPLINE_SCENE_URL =
   "https://prod.spline.design/CGCm5usRvvKNFWIz/scene.splinecode";
@@ -37,23 +35,18 @@ const Hero = () => {
           </div>
 
           <div className="relative hidden min-h-[10rem] w-full overflow-visible md:block">
-            <Suspense
-              fallback={<div className="absolute inset-0 bg-transparent" />}
-            >
-              <div className="absolute right-[-10%] top-[-30%] h-[115vh] w-[205%]">
-                <Spline
-                  scene={SPLINE_SCENE_URL}
-                  onLoad={handleSplineLoad}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    transform: "scale(1.7)",
-                    transformOrigin: "50% 50%",
-                    background: "transparent",
-                  }}
-                />
-              </div>
-            </Suspense>
+            <div className="absolute right-[-10%] top-[-30%] h-[115vh] w-[205%]">
+              <SplineLazy
+                scene={SPLINE_SCENE_URL}
+                onLoad={handleSplineLoad}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  transform: "scale(1.7)",
+                  transformOrigin: "50% 50%",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
