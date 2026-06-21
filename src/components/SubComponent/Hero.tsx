@@ -33,12 +33,12 @@ const Hero = () => {
                 From design to reality
               </h3>
 
-              <div className="w-20 h-14 bg-[#0E1711] z-10 absolute right-[-112%] bottom-2 md:block hidden " />
+              <div className="w-20 h-14 bg-[#0E1711] z-10 absolute right-[-112%] bottom-5 md:block hidden " />
             </div>
           </div>
 
           <div className="relative hidden min-h-96 w-full overflow-hidden md:block lg:min-h-120">
-            <div className="hero-spline absolute right-[-12%] top-[-2%] h-[80vh] w-[110%] overflow-hidden">
+            <div className="hero-spline absolute right-[-12%] top-[-5%] h-[80vh] w-[110%] overflow-hidden">
               <SplineLazy
                 scene={SPLINE_SCENE_URL}
                 onLoad={handleSplineLoad}
