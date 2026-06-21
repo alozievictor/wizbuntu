@@ -33,7 +33,7 @@ const Hero = () => {
                 From design to reality
               </h3>
 
-              <div className="w-20 h-14 bg-[#0E1711] z-10 absolute right-[-112%] bottom-5 md:block hidden " />
+              <div className="w-24 h-14 bg-[#0E1711] z-10 absolute right-[-112%] bottom-9 md:block hidden " />
             </div>
           </div>
 
