@@ -13,17 +13,17 @@ const Footer = () => {
       <div className="pointer-events-none absolute inset-0 bg-background/35 md:bg-background/50" />
 
       <div className="relative z-10 mx-auto w-[90%] lg:w-[85%]">
-        <div className="grid gap-12 border-b border-border pb-16 md:grid-cols-[1.1fr_1fr] md:items-center md:pb-20">
-          <h2 className="font-syne text-[48px] font-bold md:font-extrabold uppercase leading-tight text-primary md:text-[67px]">
+        <div className="grid gap-12 border-b border-border pb-16 lg:grid-cols-[1.1fr_1fr] lg:items-center md:pb-20">
+          <h2 className="font-syne text-[48px] font-bold md:font-extrabold uppercase leading-tight text-primary md:text-[58px] lg:text-[67px]">
             Tell us what
-            <br className="hidden md:block" />
+            <br className="hidden lg:block" />
             <span className="block text-tertiary">you’re</span>
             <span className="block text-transparent [-webkit-text-stroke:1px_#CCC8C1] md:[-webkit-text-stroke:1.5px_#CCC8C1]">
               thinking.
             </span>
           </h2>
 
-          <div className="grid gap-6 md:gap-10 md:justify-items-end">
+          <div className="grid gap-6 md:gap-10 lg:justify-items-end">
             <p className="font-dm max-w-md text-xl font-normal leading-tight text-secondary">
               Tell us what you're thinking. We'll tell you how to make it real —
               <span className="text-primary"> then we'll make it real.</span>

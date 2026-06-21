@@ -55,7 +55,7 @@ const CountUpNumber = ({ value }: CountUpNumberProps) => {
   return (
     <p
       ref={ref}
-      className="font-dm mb-8 text-6xl font-bold text-secondary/35 md:text-[80px] lg:mb-20 lg:text-[100px]"
+      className="font-dm mb-8 text-6xl font-bold text-secondary/35 md:text-[72px] lg:mb-20 lg:text-[92px] xl:text-[100px]"
     >
       {displayValue}
     </p>
@@ -66,7 +66,7 @@ const HowWeBuild = () => {
   return (
     <section
       id="wizbuntu"
-      className="flex w-full items-center justify-center bg-background py-20 md:py-36"
+      className="flex w-full items-center justify-center bg-background py-20 lg:py-36"
     >
       <div className="mx-auto w-[90%] lg:w-[85%] grid gap-10 md:gap-20">
         <div className="mb-14 md:mb-0">
@@ -74,14 +74,14 @@ const HowWeBuild = () => {
             How We Build
           </p>
 
-          <div className="pt-5 md:flex justify-between md:items-end w-full">
-            <h2 className="font-syne max-w-6xl text-[42px] font-bold leading-tight text-primary md:text-[76px] md:leading-[1.05] lg:text-[106px]">
+          <div className="pt-5 lg:flex md:justify-between items-center md:items-end w-full">
+            <h2 className="font-syne max-w-6xl text-[42px] font-bold leading-tight text-primary md:text-[64px] md:leading-[1.08] lg:text-[88px] xl:text-[106px]">
               From <br className="hidden md:block" /> Research
               <br className="hidden md:block" /> To{" "}
               <span className="text-tertiary">Reality.</span>
             </h2>
 
-            <p className="font-dm text-lg leading-6 text-secondary font-normal md:text-xl md:leading-7 max-w-lg flex justify-self-end">
+            <p className="font-dm mt-6 text-lg leading-6 text-secondary font-normal md:text-xl md:leading-7 w-full lg:max-w-lg flex md:justify-self-end lg:mt-0 pt-3 lg:pt-0">
               Every product we build starts with deep research and ends with a
               live, scalable system — nothing in between is skipped.
             </p>
@@ -92,17 +92,17 @@ const HowWeBuild = () => {
           {processSteps.map((step, index) => (
             <article
               key={step.number}
-              className={`flex flex-col max-w-73.25 justify-center border-b border-border py-8 lg:min-h-116 lg:border-b-0 lg:px-4 lg:py-0 ${
+              className={`flex flex-col w-full justify-center border-b border-border py-8 lg:min-h-116 lg:max-w-73.25 lg:border-b-0 lg:px-4 lg:py-0 ${
                 index > 0 ? "lg:border-l" : ""
               }`}
             >
               <CountUpNumber value={step.number} />
 
-              <h3 className="font-syne py-4 text-2xl font-bold text-primary md:text-[32px] lg:text-[38px]">
+              <h3 className="font-syne py-4 text-2xl font-bold text-primary md:text-[30px] lg:text-[38px]">
                 {step.title}
               </h3>
 
-              <p className="font-dm text-lg text-secondary font-normal md:text-xl md:leading-tight">
+              <p className="font-dm text-lg text-secondary font-normal md:text-lg md:leading-7 lg:text-xl lg:leading-tight">
                 {step.description}
               </p>
             </article>

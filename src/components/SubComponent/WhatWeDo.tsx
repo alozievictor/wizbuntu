@@ -43,7 +43,7 @@ const WhatWeDo = () => {
       className="flex w-full items-center justify-center bg-background py-1 md:py-5"
     >
       <div className="mx-auto w-[90%] lg:w-[85%] pt-0 md:pt-24">
-        <div className="mb-10 border-b border-border pb-10 md:mb-16 md:gap-8 md:pb-16">
+        <div className="mb-10 border-b border-border pb-10 md:mb-14 md:gap-8 md:pb-14 lg:mb-16 lg:pb-16">
           <div className="py-6 text-tertiary flex items-center gap-2">
             <svg
               width="24"
@@ -65,7 +65,7 @@ const WhatWeDo = () => {
               Featured Work
             </p>
           </div>
-          <h2 className="font-syne text-[42px] font-bold uppercase leading-tight text-primary md:text-[67px]">
+          <h2 className="font-syne text-[42px] font-bold uppercase leading-tight text-primary md:text-[58px] lg:text-[67px]">
             What we’ve <br className="hidden md:block" /> built
           </h2>
         </div>
@@ -74,22 +74,22 @@ const WhatWeDo = () => {
           {services.map((service) => (
             <article
               key={service.number}
-              className="group grid grid-cols-[2rem_1fr] gap-x-4 gap-y-4 group border-b border-border py-6 md:grid-cols-[2rem_1fr_1.2fr] md:items-center md:gap-14 md:py-7"
+              className="group grid grid-cols-[2rem_1fr] gap-x-4 gap-y-4 group border-b border-border py-6 lg:grid-cols-[2rem_1fr_1.2fr] lg:items-center lg:gap-14 md:py-7"
             >
               <p className="font-dm pt-1 text-base font-semibold text-secondary md:pt-0 md:text-xl">
                 {service.number}
               </p>
 
               <div>
-                <h3 className="font-syne text-2xl font-bold leading-tight text-primary group-hover:text-tertiary transition duration-300 md:w-82.5 md:text-[40px]">
+                <h3 className="font-syne text-2xl font-bold leading-tight text-primary group-hover:text-tertiary transition duration-300 md:text-[34px] lg:w-82.5 lg:text-[40px]">
                   {service.title}
                 </h3>
-                <p className="font-syne text-base font-normal leading-6 text-secondary md:ml-auto md:text-xl md:leading-tight">
+                <p className="font-syne text-base font-normal leading-6 text-secondary md:text-lg md:leading-7 lg:ml-auto lg:text-xl lg:leading-tight">
                   {service.description}
                 </p>
               </div>
 
-              <div className="col-span-2 flex w-full justify-between gap-4 md:col-span-1 items-center md:justify-end md:pr-5">
+              <div className="col-span-2 flex w-full flex-wrap justify-between gap-4 lg:col-span-1 items-center lg:justify-end lg:pr-5">
 
                 <div className="flex items-center text-[#363634] transition duration-300 gap-3 px-5 py-3 border border-border rounded-full">
                   {service.feature?.map((item, index) => (
