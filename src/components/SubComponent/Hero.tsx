@@ -38,7 +38,7 @@ const Hero = () => {
           </div>
 
           <div className="relative hidden min-h-96 w-full overflow-hidden md:block lg:min-h-120">
-            <div className="hero-spline absolute right-[-12%] top-[0%] h-[80vh] overflow-hidden">
+            <div className="hero-spline absolute right-[-12%] top-[0%] h-[80vh] w-[110%] overflow-hidden">
               <SplineLazy
                 scene={SPLINE_SCENE_URL}
                 onLoad={handleSplineLoad}
@@ -49,9 +49,7 @@ const Hero = () => {
                   transformOrigin: "50% 50%",
                 }}
               />
-              
             </div>
-            
           </div>
         </div>
       </div>
@@ -77,7 +75,7 @@ const Hero = () => {
                 viewBox="0 0 41 41"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="animate-arrow-bounce md:h-7.5 md:w-7.5"
+                className="animate-arrow-bounce md:h-[30px] md:w-[30px]"
               >
                 <path
                   d="M27.3327 30.7498L20.4993 37.5832L13.666 30.7498M20.4993 37.5832V3.4165"
