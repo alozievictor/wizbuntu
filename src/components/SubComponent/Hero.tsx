@@ -32,8 +32,6 @@ const Hero = () => {
               <h3 className="font-dm text-[43px] pt-2 md:pt-1 font-black uppercase leading-tight tracking-wider text-transparent [-webkit-text-stroke:1px_#CCC8C1] sm:text-[58px] md:text-[64px] md:[-webkit-text-stroke:1.5px_#CCC8C1] lg:text-[72px] xl:text-[80px]">
                 From design to reality
               </h3>
-
-              <div className="w-24 h-14 border border-red-600 bg-[#0E1711] z-10 absolute right-[-112%] bottom-9 md:block hidden " />
             </div>
           </div>
 
@@ -49,6 +47,7 @@ const Hero = () => {
                   transformOrigin: "50% 50%",
                 }}
               />
+              <div className="pointer-events-none absolute right-[10%] bottom-4 bg-[#0E1711] h-14 w-24 md:block hidden" />
             </div>
           </div>
         </div>
