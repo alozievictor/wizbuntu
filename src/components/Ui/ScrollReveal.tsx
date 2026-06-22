@@ -4,24 +4,35 @@ import type { ReactNode } from "react";
 interface ScrollRevealProps {
   children: ReactNode;
   delay?: number;
+  amount?: number;
+  className?: string;
 }
 
 const revealVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 36,
+    y: 64,
+    scale: 0.985,
+    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
+    filter: "blur(0px)",
     transition: {
-      duration: 0.75,
+      duration: 1,
       ease: [0.16, 1, 0.3, 1],
     },
   },
 };
 
-const ScrollReveal = ({ children, delay = 0 }: ScrollRevealProps) => {
+const ScrollReveal = ({
+  children,
+  delay = 0,
+  amount = 0.18,
+  className,
+}: ScrollRevealProps) => {
   const shouldReduceMotion = useReducedMotion();
 
   if (shouldReduceMotion) {
@@ -33,9 +44,10 @@ const ScrollReveal = ({ children, delay = 0 }: ScrollRevealProps) => {
       variants={revealVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.12 }}
+      viewport={{ once: true, amount, margin: "0px 0px -8% 0px" }}
       transition={{ delay }}
-      style={{ willChange: "transform, opacity" }}
+      className={className}
+      style={{ willChange: "transform, opacity, filter" }}
     >
       {children}
     </motion.div>

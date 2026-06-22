@@ -64,7 +64,7 @@ const Hero = () => {
 
           <div className="pt-10 flex justify-center md:justify-normal items-center gap-4 self-center lg:absolute lg:bottom-20 right-[28%] lg:right-[15%] md:pt-8 lg:pt-0 md:gap-5 lg:self-auto">
             <a
-              href="#work"
+              href="#features"
               aria-label="Scroll to featured work"
               className="grid h-11 w-11 place-items-center rounded-full border border-border text-secondary transition duration-300 hover:border-tertiary hover:text-tertiary md:h-12 md:w-12"
             >

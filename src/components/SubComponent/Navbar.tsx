@@ -157,6 +157,8 @@ const Navbar = () => {
             </a>
 
             <Button
+              href="mailto:hello@wizbuntu.com"
+              aria-label="Email hello@wizbuntu.com"
               className="h-11.25 font-syne w-32.5 text-xs uppercase"
             >
               Let's talk
@@ -170,7 +172,11 @@ const Navbar = () => {
             animate={nav ? "open" : "closed"}
             whileTap={{ scale: 0.9 }}
           >
-            {!nav ? <Menu size={24} color="currentColor" /> : <X size={24} color="currentColor" />}
+            {!nav ? (
+              <Menu size={24} color="currentColor" />
+            ) : (
+              <X size={24} color="currentColor" />
+            )}
           </motion.div>
         </div>
 
@@ -211,14 +217,12 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={itemVariants}>
                   <Button
-                    onClick={() => {
-                      handleClose();
-                      navigate("/signin");
-                    }}
+                    href="mailto:hello@wizbuntu.com"
+                    aria-label="Email hello@wizbuntu.com"
                     variant="outline"
                     className="w-full h-11.25 font-syne text-xs uppercase"
                   >
-                     Let's talk
+                    Let's talk
                   </Button>
                 </motion.li>
               </motion.ul>

@@ -45,12 +45,12 @@ const Button = ({
   const iconElement = icon ? <span className="shrink-0">{icon}</span> : null;
 
   if (href) {
-    const { href: anchorHref, ...anchorProps } = props as AnchorProps;
+    const anchorProps = props as React.AnchorHTMLAttributes<HTMLAnchorElement>;
     return (
       <a
         className={`${baseClasses} ${variantClasses} ${className}`}
-        href={anchorHref}
-        {...(anchorProps as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+        href={href}
+        {...anchorProps}
       >
         {iconPosition === "left" && iconElement}
         <span>{children}</span>

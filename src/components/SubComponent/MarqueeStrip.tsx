@@ -5,7 +5,7 @@ const marqueeItems = ["Research ", "Design", "Build", "Scale", "Automate"];
 const MarqueeStrip = () => {
   return (
     <React.Fragment>
-      <section className="w-full h-[15vh] md:h-[22vh] lg:h-[28vh] flex justify-center items-center overflow-hidden border-b border-border">
+      <section  id="features" className="w-full h-[15vh] md:h-[22vh] lg:h-[28vh] flex justify-center items-center overflow-hidden border-b border-border">
         <div className="marquee-track">
           {[0, 1].map((groupIndex) => (
             <div

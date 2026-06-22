@@ -5,7 +5,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import Loader from "./components/SubComponent/Loader";
 
 const Home = lazy(() => import("./Pages/Home"));
@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <React.Fragment>
+    <MotionConfig transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}>
       <AnimatePresence onExitComplete={() => setShowApp(true)}>
         {isLoading && (
           <motion.div
@@ -48,7 +48,7 @@ function App() {
           </Router>
         </div>
       )}
-    </React.Fragment>
+    </MotionConfig>
   );
 }
 
